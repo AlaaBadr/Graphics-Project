@@ -11,7 +11,9 @@ public:
 
 	void doIt(HDC hdc)
 	{
-		DrawCurveSecondDegreeHalfPoint(hdc, points[0], points[1], points[2], RGB(0, 0, 0));
+		DrawCurveSecondDegreeHalfPoint(hdc, points[0], points[1], points[2], color);
+		//points.clear();
+		//numOfInput = 0;
 	}
 
 	void DrawCurveSecondDegreeHalfPoint(HDC hdc, POINT p1, POINT p2, POINT p3, COLORREF color){
@@ -26,7 +28,7 @@ public:
 		{
 			x = alphax*t*t + betax*t + gammax;
 			y = alphay*t*t + betay*t + gammay;
-			SetPixel(hdc, round(x), round(y), RGB(0, 0, 0));
+			SetPixel(hdc, round(x), round(y), color);
 		}
 	}
 

@@ -11,7 +11,9 @@ public:
 
 	void doIt(HDC hdc)
 	{
-		DrawCurveFirstDegree(hdc, points[0], points[1], RGB(0, 0, 0));
+		DrawCurveFirstDegree(hdc, points[0], points[1], color);
+		//points.clear();
+		//numOfInput = 0;
 	}
 
 	void DrawCurveFirstDegree(HDC hdc, POINT p1, POINT p2, COLORREF color)
@@ -22,7 +24,7 @@ public:
 		{
 			x = alphax*t + betax;
 			y = alphay*t + betay;
-			SetPixel(hdc, round(x), round(y), RGB(0, 0, 0));
+			SetPixel(hdc, round(x), round(y), color);
 		}
 	}
 

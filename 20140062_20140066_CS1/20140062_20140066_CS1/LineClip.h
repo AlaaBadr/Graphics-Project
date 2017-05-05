@@ -14,7 +14,9 @@ public:
 
 	void doIt(HDC hdc)
 	{
-		cohenSuth(hdc, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[3].x, points[4].y, points[5].y, RGB(0, 0, 0));
+		cohenSuth(hdc, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[3].x, points[4].y, points[5].y, color);
+		//points.clear();
+		//numOfInput = 0;
 	}
 
 	union outCode{
