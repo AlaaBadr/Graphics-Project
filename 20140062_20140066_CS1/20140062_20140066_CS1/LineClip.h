@@ -14,6 +14,11 @@ public:
 
 	void doIt(HDC hdc)
 	{
+		d.DrawLineDDA(hdc, points[2].x, points[4].y, points[3].x, points[4].y, RGB(180, 180, 180));
+		d.DrawLineDDA(hdc, points[2].x, points[5].y, points[3].x, points[5].y, RGB(180, 180, 180));
+		d.DrawLineDDA(hdc, points[2].x, points[4].y, points[2].x, points[5].y, RGB(180, 180, 180));
+		d.DrawLineDDA(hdc, points[3].x, points[4].y, points[3].x, points[5].y, RGB(180, 180, 180));
+
 		cohenSuth(hdc, points[0].x, points[0].y, points[1].x, points[1].y, points[2].x, points[3].x, points[4].y, points[5].y, color);
 		//points.clear();
 		//numOfInput = 0;

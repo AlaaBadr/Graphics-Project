@@ -107,7 +107,7 @@ public:
 			//if (current != NULL)
 			//	free(current);
 			current = new PointClip();
-			current->setId(ID_CLIPPING_LINE);
+			current->setId(ID_CLIPPING_POINT);
 			break;
 		case ID_CLIPPING_LINE:
 			//if (current != NULL)
