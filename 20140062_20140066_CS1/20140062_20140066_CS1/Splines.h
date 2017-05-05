@@ -14,6 +14,13 @@ public:
 	{
 	}
 
+	void doIt(HDC hdc)
+	{
+		DrawCurveCardinal(hdc, &points[0], points.size(), 0.5, color);
+		//points.clear();
+		//numOfInput = 0;
+	}
+
 	void DrawCurveCardinal(HDC hdc, POINT *p, int n, double c, COLORREF color){
 		POINT* t = new POINT[n - 2];
 		for (int i = 1; i < n - 1; i++)

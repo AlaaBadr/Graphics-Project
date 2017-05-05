@@ -83,10 +83,12 @@
     <ClInclude Include="Bezier.h" />
     <ClInclude Include="CartesianCirlce.h" />
     <ClInclude Include="Command.h" />
+    <ClInclude Include="ConvexFill.h" />
     <ClInclude Include="DDALine.h" />
     <ClInclude Include="FirstDegreeCurve.h" />
     <ClInclude Include="Hermite.h" />
     <ClInclude Include="LineClip.h" />
+    <ClInclude Include="Mapper.h" />
     <ClInclude Include="MidPointCircle.h" />
     <ClInclude Include="MidPointLine.h" />
     <ClInclude Include="ParametricLine.h" />
