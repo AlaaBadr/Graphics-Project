@@ -4,6 +4,7 @@
 #include "ParametricLine.h"
 #include "CartesianCirlce.h"
 #include "PolarCircle.h"
+#include "IterativePolarCircle.h"
 #include "MidPointCircle.h"
 #include "FirstDegreeCurve.h"
 #include "SecondDegreeHalfCurve.h"
@@ -32,92 +33,66 @@ public:
 		switch (id)
 		{
 		case ID_DRAWLINE_DDA:
-			//if (current != NULL)
-			//	free(current);
 			current = new DDALine();
 			current->setId(ID_DRAWLINE_DDA);
 			break;
 		case ID_DRAWLINE_PARAMETRIC:
-			//if (current != NULL)
-			//	free(current);
 			current = new ParametricLine();
 			current->setId(ID_DRAWLINE_PARAMETRIC);
 			break;
 		case ID_DRAWLINE_MIDPOINT:
-			//if (current != NULL)
-			//	free(current);
 			current = new MidPointLine();
 			current->setId(ID_DRAWLINE_MIDPOINT);
 			break;
 		case ID_DRAWCIRCLE_CARTESIAN:
-			//if (current != NULL)
-			//	free(current);
 			current = new CartesianCirlce();
 			current->setId(ID_DRAWCIRCLE_CARTESIAN);
 			break;
 		case ID_DRAWCIRCLE_POLAR:
-			//if (current != NULL)
-			//	free(current);
 			current = new PolarCircle();
 			current->setId(ID_DRAWCIRCLE_POLAR);
 			break;
+		case ID_DRAWCIRCLE_ITERATIVEPOLAR:
+			current = new IterativePolarCircle();
+			current->setId(ID_DRAWCIRCLE_ITERATIVEPOLAR);
+			break;
 		case ID_DRAWCIRCLE_MIDPOINT:
-			//if (current != NULL)
-			//	free(current);
 			current = new MidPointCircle();
 			current->setId(ID_DRAWCIRCLE_MIDPOINT);
 			break;
 		case ID_DRAWCURVES_FIRSTDEGREE:
-			//if (current != NULL)
-			//	free(current);
 			current = new FirstDegreeCurve();
 			current->setId(ID_DRAWCURVES_FIRSTDEGREE);
 			break;
 		case ID_SECONDDEGREE_HALFPOINT:
-			//if (current != NULL)
-			//	free(current);
 			current = new SecondDegreeHalfCurve();
 			current->setId(ID_SECONDDEGREE_HALFPOINT);
 			break;
 		case ID_SECONDDEGREE_SLOPE:
-			//if (current != NULL)
-			//	free(current);
 			current = new SecondDegreeSlopeCurve();
 			current->setId(ID_SECONDDEGREE_SLOPE);
 			break;
 		case ID_THIRDDEGREE_HERMITE:
-			//if (current != NULL)
-			//	free(current);
 			current = new Hermite();
 			current->setId(ID_THIRDDEGREE_HERMITE);
 			break;
 		case ID_THIRDDEGREE_BEZIER:
-			//if (current != NULL)
-			//	free(current);
 			current = new Bezier();
 			current->setId(ID_THIRDDEGREE_BEZIER);
 			break;
 		case ID_DRAWCURVES_SPLINES:
-			//if (current != NULL)
-			//	free(current);
 			current = new Splines();
 			current->setId(ID_DRAWCURVES_SPLINES);
 			break;
 		case ID_CLIPPING_POINT:
-			//if (current != NULL)
-			//	free(current);
 			current = new PointClip();
 			current->setId(ID_CLIPPING_POINT);
 			break;
 		case ID_CLIPPING_LINE:
-			//if (current != NULL)
-			//	free(current);
 			current = new LineClip();
 			current->setId(ID_CLIPPING_LINE);
 			break;
 		case ID_FILLING_CONVEXFILLING:
-			//if (current != NULL)
-			//	free(current);
 			current = new ConvexFill();
 			current->setId(ID_FILLING_CONVEXFILLING);
 			break;

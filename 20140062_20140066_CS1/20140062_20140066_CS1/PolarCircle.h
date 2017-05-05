@@ -12,8 +12,6 @@ public:
 	void doIt(HDC hdc)
 	{
 		DrawCirclePolar(hdc, points[0].x, points[0].y, distance(points[0], points[1]), color);
-		//points.clear();
-		//numOfInput = 0;
 	}
 
 	int distance(POINT p1, POINT p2)
@@ -35,16 +33,10 @@ public:
 	void DrawCirclePolar(HDC hdc, int Xc, int Yc, int r, COLORREF color)
 	{
 		double dtheta = 1.0 / r;
-		double ctheta = cos(dtheta);
-		double stheta = sin(dtheta);
-		double x = r;
-		double y = 0;
-		Draw8Points(hdc, Xc, Yc, x, y, color);
-		while (y < x)
+		for (double theta = 0; theta <= 45; theta += dtheta)
 		{
-			double x1 = x*ctheta - y*stheta;
-			y = x*stheta + y*ctheta;
-			x = x1;
+			double x = r * cos(theta);
+			double y = r * sin(theta);
 			Draw8Points(hdc, Xc, Yc, round(x), round(y), color);
 		}
 	}

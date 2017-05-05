@@ -87,6 +87,7 @@
     <ClInclude Include="DDALine.h" />
     <ClInclude Include="FirstDegreeCurve.h" />
     <ClInclude Include="Hermite.h" />
+    <ClInclude Include="IterativePolarCircle.h" />
     <ClInclude Include="LineClip.h" />
     <ClInclude Include="Mapper.h" />
     <ClInclude Include="MidPointCircle.h" />
