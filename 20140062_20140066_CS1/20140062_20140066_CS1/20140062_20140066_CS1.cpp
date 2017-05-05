@@ -226,7 +226,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		else if (wmId >= ID_BACKGROUNDCOLOR_RED && wmId <= ID_BACKGROUNDCOLOR_WHITE)
 		{
 			backgroundcolor = mapper.getcolor(wmId);
-			current = mapper.getCommand(ID_FILLING_CONVEXFILLING);
+			Command* current = mapper.getCommand(ID_FILLING_CONVEXFILLING);
 			current->setColor(backgroundcolor);
 			RECT window;
 			GetClientRect(hWnd, &window);
@@ -264,11 +264,11 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			currentID = current->getId();
 		}
 		break;
-	case WM_PAINT:
-		hdc = BeginPaint(hWnd, &ps);
-		// TODO: Add any drawing code here...
-		EndPaint(hWnd, &ps);
-		break;
+	//case WM_PAINT:
+	//	hdc = BeginPaint(hWnd, &ps);
+	//	// TODO: Add any drawing code here...
+	//	EndPaint(hWnd, &ps);
+	//	break;
 	case WM_LBUTTONDOWN:
 		POINT p;
 		p.x = LOWORD(lParam);
