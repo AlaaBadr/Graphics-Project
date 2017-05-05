@@ -11,7 +11,9 @@ public:
 
 	void doIt(HDC hdc)
 	{
-		DrawLineParametric(hdc, points[0].x, points[0].y, points[1].x, points[1].y, RGB(0, 0, 0));
+		DrawLineParametric(hdc, points[0].x, points[0].y, points[1].x, points[1].y, color);
+		//points.clear();
+		//numOfInput = 0;
 	}
 
 	int rounding(double x){

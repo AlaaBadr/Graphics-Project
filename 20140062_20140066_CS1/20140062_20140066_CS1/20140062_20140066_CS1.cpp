@@ -2,7 +2,24 @@
 //
 
 #include "stdafx.h"
+#include "DDALine.h"
+#include "MidPointLine.h"
+#include "ParametricLine.h"
+#include "CartesianCirlce.h"
+#include "PolarCircle.h"
+#include "MidPointCircle.h"
+#include "FirstDegreeCurve.h"
+#include "SecondDegreeHalfCurve.h"
+#include "SecondDegreeSlopeCurve.h"
+#include "Hermite.h"
+#include "Bezier.h"
+#include "Splines.h"
+#include "LineClip.h"
+#include "PointClip.h"
+#include "ConvexFill.h"
 #include "20140062_20140066_CS1.h"
+#include "Mapper.h"
+#include <fstream>
 
 #define MAX_LOADSTRING 100
 
@@ -16,7 +33,7 @@ ATOM				MyRegisterClass(HINSTANCE hInstance);
 BOOL				InitInstance(HINSTANCE, int);
 LRESULT CALLBACK	WndProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK	About(HWND, UINT, WPARAM, LPARAM);
-
+Mapper mapper;
 int APIENTRY _tWinMain(_In_ HINSTANCE hInstance,
                      _In_opt_ HINSTANCE hPrevInstance,
                      _In_ LPTSTR    lpCmdLine,
@@ -93,6 +110,51 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 //        In this function, we save the instance handle in a global variable and
 //        create and display the main program window.
 //
+void Save(vector<Command*> history)
+{
+	fstream file("history.txt",ios::out);
+	for (int i = 0; i < history.size(); i++)
+	{
+		file << history[i]->getId() << endl;
+		file << history[i]->getNumOfInput() << endl;
+		vector<POINT> points = history[i]->getPoints();
+
+		for (int j = 0; j <points.size(); j++)
+		{
+			file << points[j].x << " " << points[j].y << endl;
+		}
+		file << history[i]->getColor()<<endl;
+	}
+	file.close();
+		
+}
+void Load(HDC hdc)
+{
+	fstream file("History.txt", ios::in);
+	Command* current;
+	int id;
+	while (!file.eof())
+	{
+		file >> id;
+		if (file.eof())
+			break;
+		current = mapper.getCommand(id);
+		int numberofInput;
+		file >> numberofInput;
+		current->setNumOfInput(numberofInput);
+		for (int i = 0; i < numberofInput; i++)
+		{
+			POINT tmp;
+			file >> tmp.x >> tmp.y;
+			current->input(tmp);
+		}
+		COLORREF color;
+		file >> color;
+		current->setColor(color);
+		current->doIt(hdc);
+	}
+	file.close();
+}
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    HWND hWnd;
@@ -128,23 +190,78 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	int wmId, wmEvent;
 	PAINTSTRUCT ps;
 	HDC hdc;
-
+	static Command *current;
+	static COLORREF drawingcolor = RGB(0,0,0);
+	static COLORREF backgroundcolor= RGB(255,255,255);
+	static int currentID;
+	static vector<Command*> history;
 	switch (message)
 	{
 	case WM_COMMAND:
 		wmId    = LOWORD(wParam);
 		wmEvent = HIWORD(wParam);
 		// Parse the menu selections:
-		switch (wmId)
+		if (wmId == IDM_ABOUT)
 		{
-		case IDM_ABOUT:
 			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-			break;
-		case IDM_EXIT:
+		}
+		else if (wmId == IDM_EXIT)
+		{
 			DestroyWindow(hWnd);
-			break;
-		default:
-			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
+		else if (wmId == ID_FILE_SAVE)
+		{
+			Save(history);
+		}
+		else if (wmId == ID_FILE_LOAD)
+		{
+			hdc = GetDC(hWnd);
+			Load(hdc);
+			ReleaseDC(hWnd, hdc);
+		}
+		else if (wmId >= ID_DRAWINGCOLOR_RED && wmId <= ID_DRAWINGCOLOR_WHITE)
+		{
+			drawingcolor = mapper.getcolor(wmId);
+		}
+		else if (wmId >= ID_BACKGROUNDCOLOR_RED && wmId <= ID_BACKGROUNDCOLOR_WHITE)
+		{
+			backgroundcolor = mapper.getcolor(wmId);
+			current = mapper.getCommand(ID_FILLING_CONVEXFILLING);
+			current->setColor(backgroundcolor);
+			RECT window;
+			GetClientRect(hWnd, &window);
+			POINT tmp;
+			tmp.x = window.left;
+			tmp.y = window.top;
+			current->input(tmp);
+			current->increment();
+
+			tmp.x = window.right;
+			tmp.y = window.top;
+			current->input(tmp);
+			current->increment();
+
+			tmp.x = window.right;
+			tmp.y = window.bottom;
+			current->input(tmp);
+			current->increment();
+
+			tmp.x = window.left;
+			tmp.y = window.bottom;
+			current->input(tmp);
+			current->increment();
+
+			Save(history);
+			hdc = GetDC(hWnd);
+			current->doIt(hdc);
+			Load(hdc);
+			ReleaseDC(hWnd, hdc);
+
+		}
+		else
+		{
+			current = mapper.getCommand(wmId);
+			currentID = current->getId();
 		}
 		break;
 	case WM_PAINT:
@@ -152,7 +269,27 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		// TODO: Add any drawing code here...
 		EndPaint(hWnd, &ps);
 		break;
+	case WM_LBUTTONDOWN:
+		POINT p;
+		p.x = LOWORD(lParam);
+		p.y = HIWORD(lParam);
+		current->input(p);
+		current->increment();
+		break;
+	case WM_RBUTTONDOWN:
+		hdc = GetDC(hWnd);
+		current->setColor(drawingcolor);
+		current->doIt(hdc);
+		ReleaseDC(hWnd, hdc);
+		history.push_back(current);
+		current = mapper.getCommand(currentID);
+		break;
 	case WM_DESTROY:
+		//for (int i = 0; i < history.size(); i++)
+		//{
+		//	free(history[i]);
+		//}
+		//free(&history[0]);
 		PostQuitMessage(0);
 		break;
 	default:

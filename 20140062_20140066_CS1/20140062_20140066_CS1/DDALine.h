@@ -11,7 +11,9 @@ public:
 
 	void doIt(HDC hdc)
 	{
-		DrawLineDDA(hdc, points[0].x, points[0].y, points[1].x, points[1].y, RGB(0, 0, 0));
+		DrawLineDDA(hdc, points[0].x, points[0].y, points[1].x, points[1].y, color);
+		//points.clear();
+		//numOfInput = 0;
 	}
 
 	void swapNum(int &x1, int &x2, int &y1, int&y2){
@@ -24,7 +26,6 @@ public:
 	}
 
 	void DrawLineDDA(HDC hdc, int x1, int y1, int x2, int y2, COLORREF color) {
-		//optimized 3la wad3o, eltany yuuckkyyy..
 		double dx = x2 - x1;
 		double dy = y2 - y1;
 		double m, mi, x, y;
