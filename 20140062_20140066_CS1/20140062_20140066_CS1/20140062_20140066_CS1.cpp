@@ -264,11 +264,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 			currentID = current->getId();
 		}
 		break;
-	//case WM_PAINT:
-	//	hdc = BeginPaint(hWnd, &ps);
-	//	// TODO: Add any drawing code here...
-	//	EndPaint(hWnd, &ps);
-	//	break;
 	case WM_LBUTTONDOWN:
 		POINT p;
 		p.x = LOWORD(lParam);
@@ -285,11 +280,6 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 		current = mapper.getCommand(currentID);
 		break;
 	case WM_DESTROY:
-		//for (int i = 0; i < history.size(); i++)
-		//{
-		//	free(history[i]);
-		//}
-		//free(&history[0]);
 		PostQuitMessage(0);
 		break;
 	default:
