@@ -16,8 +16,6 @@ public:
 	void doIt(HDC hdc)
 	{
 		DrawCurveThirdDegreeHermite(hdc, points[0], points[1], points[2], points[3], color);
-		//points.clear();
-		//numOfInput = 0;
 	}
 
 	void mul(mat4 a, vect4 b, vect4 c)

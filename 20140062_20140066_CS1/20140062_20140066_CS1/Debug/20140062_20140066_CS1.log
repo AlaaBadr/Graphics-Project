@@ -1,4 +1,4 @@
-﻿Build started 06-May-17 12:52:30 AM.
+﻿Build started 10-May-17 10:36:36 PM.
      1>Project "C:\Users\Alaa\Documents\GitHub\Graphics-Project\20140062_20140066_CS1\20140062_20140066_CS1\20140062_20140066_CS1.vcxproj" on node 2 (Build target(s)).
      1>ClCompile:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"stdafx.h" /Fp"Debug\20140062_20140066_CS1.pch" /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt 20140062_20140066_CS1.cpp
@@ -7,29 +7,36 @@
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\ddaline.h(45): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\ddaline.h(57): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\ddaline.h(62): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\cartesiancirlce.h(21): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\cartesiancirlce.h(19): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\polarcircle.h(19): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\polarcircle.h(40): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\midpointcircle.h(21): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\firstdegreecurve.h(27): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\seconddegreehalfcurve.h(31): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\seconddegreeslopecurve.h(31): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\hermite.h(65): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\bezier.h(38): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\hermite.h(63): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\bezier.h(36): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\splines.h(28): warning C4244: '=' : conversion from 'double' to 'LONG', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\splines.h(29): warning C4244: '=' : conversion from 'double' to 'LONG', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclip.h(56): warning C4244: '=' : conversion from 'double' to 'LONG', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclip.h(64): warning C4244: '=' : conversion from 'double' to 'LONG', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclip.h(106): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(24): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(29): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(52): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(54): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(59): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(61): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\lineclipcircle.h(66): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\convexfill.h(54): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\convexfill.h(56): warning C4244: '=' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\iterativepolarcircle.h(19): warning C4244: 'return' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\iterativepolarcircle.h(40): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
      1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\iterativepolarcircle.h(46): warning C4244: 'argument' : conversion from 'double' to 'int', possible loss of data
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\20140062_20140066_cs1.cpp(116): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\20140062_20140066_cs1.cpp(122): warning C4018: '<' : signed/unsigned mismatch
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\20140062_20140066_cs1.cpp(191): warning C4101: 'ps' : unreferenced local variable
-     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\mapper.h(128): warning C4715: 'Mapper::getcolor' : not all control paths return a value
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\20140062_20140066_cs1.cpp(117): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\20140062_20140066_cs1.cpp(123): warning C4018: '<' : signed/unsigned mismatch
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\20140062_20140066_cs1.cpp(192): warning C4101: 'ps' : unreferenced local variable
+     1>c:\users\alaa\documents\github\graphics-project\20140062_20140066_cs1\20140062_20140066_cs1\mapper.h(133): warning C4715: 'Mapper::getcolor' : not all control paths return a value
        Link:
          C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Alaa\Documents\GitHub\Graphics-Project\20140062_20140066_CS1\Debug\20140062_20140066_CS1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Alaa\Documents\GitHub\Graphics-Project\20140062_20140066_CS1\Debug\20140062_20140066_CS1.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Alaa\Documents\GitHub\Graphics-Project\20140062_20140066_CS1\Debug\20140062_20140066_CS1.lib" /MACHINE:X86 Debug\20140062_20140066_CS1.res
          Debug\20140062_20140066_CS1.obj
@@ -39,4 +46,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:08.49
+Time Elapsed 00:00:01.36

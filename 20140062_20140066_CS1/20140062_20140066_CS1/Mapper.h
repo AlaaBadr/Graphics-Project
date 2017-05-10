@@ -14,6 +14,7 @@
 #include "Splines.h"
 #include "LineClip.h"
 #include "PointClip.h"
+#include "LineClipCircle.h"
 #include "ConvexFill.h"
 #include "resource.h"
 class Mapper
@@ -88,9 +89,13 @@ public:
 			current = new PointClip();
 			current->setId(ID_CLIPPING_POINT);
 			break;
-		case ID_CLIPPING_LINE:
+		case ID_LINE_RECTANGLE:
 			current = new LineClip();
-			current->setId(ID_CLIPPING_LINE);
+			current->setId(ID_LINE_RECTANGLE);
+			break;
+		case ID_LINE_CIRCLE:
+			current = new LineClipCircle();
+			current->setId(ID_LINE_CIRCLE);
 			break;
 		case ID_FILLING_CONVEXFILLING:
 			current = new ConvexFill();

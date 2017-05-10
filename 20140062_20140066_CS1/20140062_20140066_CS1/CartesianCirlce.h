@@ -12,8 +12,6 @@ public:
 	void doIt(HDC hdc)
 	{
 		DrawCircleCartesianDirectMethod(hdc, points[0].x, points[0].y, distance(points[0], points[1]), color);
-		//points.clear();
-		//numOfInput = 0;
 	}
 
 	int distance(POINT p1, POINT p2)
