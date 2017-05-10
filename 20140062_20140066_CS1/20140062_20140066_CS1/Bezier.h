@@ -12,8 +12,6 @@ public:
 	void doIt(HDC hdc)
 	{
 		DrawCurveRecursiveBezier(hdc, &points[0], points.size(), color);
-		//points.clear();
-		//numOfInput = 0;
 	}
 
 	double BezierRecurse(double *p, int n, double t){

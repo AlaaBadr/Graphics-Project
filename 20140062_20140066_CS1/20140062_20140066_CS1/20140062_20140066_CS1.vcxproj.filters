@@ -84,6 +84,9 @@
     <ClInclude Include="IterativePolarCircle.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="LineClipCircle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

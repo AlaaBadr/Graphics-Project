@@ -16,6 +16,7 @@
 #include "Splines.h"
 #include "LineClip.h"
 #include "PointClip.h"
+#include "LineClipCircle.h"
 #include "ConvexFill.h"
 #include "20140062_20140066_CS1.h"
 #include "Mapper.h"
